@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1F2BC5C-5E65-44EC-A136-363305AE95A7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aviobileti</RootNamespace>
+    <AssemblyName>Aviobileti</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\comingsoon.css" />
+    <Content Include="Content\css\control.css" />
+    <Content Include="Content\css\control1.css" />
+    <Content Include="Content\images\Airplane-Earth.jpg" />
+    <Content Include="Content\images\black-asc.gif" />
+    <Content Include="Content\images\black-desc.gif" />
+    <Content Include="Content\images\black-unsorted.gif" />
+    <Content Include="Content\images\dropbox-asc-hovered.png" />
+    <Content Include="Content\images\dropbox-asc.png" />
+    <Content Include="Content\images\dropbox-desc-hovered.png" />
+    <Content Include="Content\images\dropbox-desc.png" />
+    <Content Include="Content\images\green-asc.gif" />
+    <Content Include="Content\images\green-desc.gif" />
+    <Content Include="Content\images\green-header.gif" />
+    <Content Include="Content\images\green-unsorted.gif" />
+    <Content Include="Content\images\ice-asc.gif" />
+    <Content Include="Content\images\ice-desc.gif" />
+    <Content Include="Content\images\ice-unsorted.gif" />
+    <Content Include="Content\images\white-asc.gif" />
+    <Content Include="Content\images\white-desc.gif" />
+    <Content Include="Content\images\white-unsorted.gif" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\theme.default.css" />
+    <Content Include="Content\css\tube.css" />
+    <Content Include="Content\css\yahoo.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Public\Doma.aspx" />
+    <Content Include="User\MoiBileti.aspx" />
+    <Content Include="Public\NovaSmetka.aspx" />
+    <Content Include="Public\Prebaraj.aspx" />
+    <Content Include="Public\Rezerviraj.aspx" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap-collapse.js" />
+    <Content Include="Scripts\bootstrap-dropdown.js" />
+    <Content Include="Scripts\bootstrap-modal.js" />
+    <Content Include="Scripts\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap-transition.js" />
+    <Content Include="Scripts\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jqcarousel.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\prettify.js" />
+    <Content Include="Public\SignIn.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Public\Doma.aspx.cs">
+      <DependentUpon>Doma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\Doma.aspx.designer.cs">
+      <DependentUpon>Doma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\MoiBileti.aspx.cs">
+      <DependentUpon>MoiBileti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MoiBileti.aspx.designer.cs">
+      <DependentUpon>MoiBileti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\NovaSmetka.aspx.cs">
+      <DependentUpon>NovaSmetka.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\NovaSmetka.aspx.designer.cs">
+      <DependentUpon>NovaSmetka.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\Prebaraj.aspx.cs">
+      <DependentUpon>Prebaraj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\Prebaraj.aspx.designer.cs">
+      <DependentUpon>Prebaraj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\Rezerviraj.aspx.cs">
+      <DependentUpon>Rezerviraj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\Rezerviraj.aspx.designer.cs">
+      <DependentUpon>Rezerviraj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template.Master.cs">
+      <DependentUpon>Template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template.Master.designer.cs">
+      <DependentUpon>Template.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\css\bootstrap-theme.css.map" />
+    <None Include="Content\css\bootstrap.css.map" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Template.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50085</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

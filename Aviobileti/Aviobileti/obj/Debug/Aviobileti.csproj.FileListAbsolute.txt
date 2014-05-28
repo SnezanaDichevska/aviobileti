@@ -1,0 +1,4 @@
+c:\users\windows\documents\visual studio 2010\Projects\Aviobileti\Aviobileti\bin\Aviobileti.dll
+c:\users\windows\documents\visual studio 2010\Projects\Aviobileti\Aviobileti\bin\Aviobileti.pdb
+c:\users\windows\documents\visual studio 2010\Projects\Aviobileti\Aviobileti\obj\Debug\Aviobileti.dll
+c:\users\windows\documents\visual studio 2010\Projects\Aviobileti\Aviobileti\obj\Debug\Aviobileti.pdb

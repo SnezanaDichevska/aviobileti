@@ -1,0 +1,11 @@
+
+table.tablesorter .headerSortUp {
+	background-image: url(asc.png);
+	background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+table.tablesorter .headerSortDown {
+	background-image: url(desc.png);
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
