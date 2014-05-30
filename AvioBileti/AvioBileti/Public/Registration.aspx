@@ -66,7 +66,15 @@
         height: 28px;
         width: 343px;
     }
-</style>
+        .style24
+        {
+            width: 151px;
+        }
+        .style25
+        {
+            width: 141px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FlightSearchSpace" runat="server">
     <table class="style10" id="registrationTable">
@@ -92,128 +100,161 @@
             <asp:Panel ID="Panel2" runat="server" Width="29px">
             </asp:Panel>
         </td>
-        <td>
+        <td class="style24">
             Корисничко име:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbKorisnichkoIme" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            <asp:Panel ID="Panel1" runat="server" Width="143px">
+            <asp:Panel ID="Panel1" runat="server" Width="337px">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="Внесете корисничко име!" ControlToValidate="tbKorisnichkoIme"></asp:RequiredFieldValidator>
+                <br>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="tbKorisnichkoIme" Display="Dynamic" 
+                    ErrorMessage="За корисничко име можете да внесете само : a-z,  A-Z , @,  * ,  -  ,  _" 
+                    ValidationExpression="^[a-zA-Z0-9_\-@\*]*$"></asp:RegularExpressionValidator>
+                </br>
             </asp:Panel>
         </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Име:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbIme" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="tbIme" ErrorMessage="Внесете име!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Презиме:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbPrezime" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                ControlToValidate="tbPrezime" ErrorMessage="Внесете презиме!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Пол:</td>
-        <td>
+        <td class="style25">
             <asp:RadioButtonList ID="rbPol" runat="server" RepeatDirection="Horizontal">
                 <asp:ListItem Value="m">машки</asp:ListItem>
                 <asp:ListItem Value="f">женски</asp:ListItem>
             </asp:RadioButtonList>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                ControlToValidate="rbPol" ErrorMessage="Одберете пол!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Адреса:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbAdresa" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                ControlToValidate="tbAdresa" ErrorMessage="Внесете адреса!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Град:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbGrad" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                ControlToValidate="tbGrad" ErrorMessage="Внесете град"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Држава:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbDrzava" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                ControlToValidate="tbDrzava" ErrorMessage="Внесете држава!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Мобилен тел.:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbMobTel" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                ControlToValidate="tbMobTel" ErrorMessage="Внесете телефон!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Е-адреса:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                ControlToValidate="tbEmail" ErrorMessage="Внесете e-mail адреса!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Лозинка:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                ControlToValidate="tbPassword" ErrorMessage="Внесете лозинка!"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                ControlToValidate="tbPassword" Display="Dynamic" 
+                ErrorMessage="За лозинка можете да внесете само : a-z,  A-Z , @,  * ,  -  ,  _" 
+                ValidationExpression=" ^[a-zA-Z0-9_\-@\*]*$ "></asp:RegularExpressionValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">
             &nbsp;</td>
-        <td>
+        <td class="style24">
             Лозинка за потврда:</td>
-        <td>
+        <td class="style25">
             <asp:TextBox ID="tbPasswordCheck" runat="server"></asp:TextBox>
         </td>
         <td class="style22">
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                ControlToValidate="tbPasswordCheck" ErrorMessage="Потврдете ја лозинката!"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="style13">

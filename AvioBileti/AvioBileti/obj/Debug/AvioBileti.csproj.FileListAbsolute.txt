@@ -2,7 +2,14 @@ C:\Users\Windows\Desktop\ITproekt2\AvioBileti\AvioBileti\bin\AvioBileti.dll
 C:\Users\Windows\Desktop\ITproekt2\AvioBileti\AvioBileti\bin\AvioBileti.pdb
 C:\Users\Windows\Desktop\ITproekt2\AvioBileti\AvioBileti\obj\Debug\AvioBileti.dll
 C:\Users\Windows\Desktop\ITproekt2\AvioBileti\AvioBileti\obj\Debug\AvioBileti.pdb
+<<<<<<< HEAD
 C:\Users\Windows\Desktop\ITproekt_aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.dll
 C:\Users\Windows\Desktop\ITproekt_aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.pdb
 C:\Users\Windows\Desktop\ITproekt_aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.dll
 C:\Users\Windows\Desktop\ITproekt_aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.pdb
+=======
+C:\xampp\htdocs\aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.dll
+C:\xampp\htdocs\aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.pdb
+C:\xampp\htdocs\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.dll
+C:\xampp\htdocs\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.pdb
+>>>>>>> bfa509736ac54cc8c71e48ad854dad3a24d71fe2
