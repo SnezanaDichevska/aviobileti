@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AvioBileti.User {
+namespace AvioBileti.Public {
     
     
-    public partial class MyReservations {
+    public partial class Home {
         
         /// <summary>
-        /// lblKorisnikLista control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblKorisnikLista;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// gvRezervacii control.
+        /// gvLetovi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRezervacii;
+        protected global::System.Web.UI.WebControls.GridView gvLetovi;
     }
 }

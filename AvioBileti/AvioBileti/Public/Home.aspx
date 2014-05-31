@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MyReservations.aspx.cs" Inherits="AvioBileti.User.MyReservations" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true"
+    CodeBehind="Home.aspx.cs" Inherits="AvioBileti.Public.Home" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentSpace" runat="server">
-    <h2><asp:Label ID="lblKorisnikLista" runat="server" Text="Листа на резервации за корисникот Име Презиме"></asp:Label></h2>
-    <asp:GridView ID="gvRezervacii" runat="server" CellPadding="4" 
-        ForeColor="#333333" GridLines="None">
+    <h2><asp:Label ID="Label1" runat="server" Text="Преглед на сите летови"></asp:Label></h2>
+    <asp:GridView ID="gvLetovi" runat="server" CellPadding="4" 
+    ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

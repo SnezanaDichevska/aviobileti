@@ -1,88 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="AvioBileti.Public.Registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-    .style10
-    {
-        width: 100%;
-        background-color: #FFFFCC;
-    }
-    .style11
-    {
-        height: 33px;
-    }
-    .style12
-    {
-        height: 33px;
-        width: 30px;
-    }
-    .style13
-    {
-        width: 30px;
-    }
-    .style14
-    {
-        height: 26px;
-        width: 30px;
-    }
-    .style15
-    {
-        height: 26px;
-    }
-    .style16
-    {
-        height: 23px;
-        width: 120px;
-    }
-    .style17
-    {
-        height: 23px;
-        width: 357px;
-    }
-    .style18
-    {
-        height: 28px;
-        width: 30px;
-    }
-    .style19
-    {
-        height: 28px;
-    }
-    .style20
-    {
-        height: 23px;
-        width: 343px;
-    }
-    .style21
-    {
-        height: 26px;
-        width: 343px;
-    }
-    .style22
-    {
-        width: 343px;
-    }
-    .style23
-    {
-        height: 28px;
-        width: 343px;
-    }
-        .style24
-        {
-            width: 151px;
-        }
-        .style25
-        {
-            width: 141px;
-        }
-    </style>
+
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="FlightSearchSpace" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentSpace" runat="server">
     <table class="style10" id="registrationTable">
     <tr>
         <td class="style16">
             </td>
         <td class="style17" colspan="2">
-            <strong>Внесете ги личните податоци:</strong></td>
+            <strong>Внесете ги вашите лични податоци:</strong></td>
         <td class="style20">
             </td>
     </tr>
@@ -108,12 +34,14 @@
         <td class="style22">
             <asp:Panel ID="Panel1" runat="server" Width="337px">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ErrorMessage="Внесете корисничко име!" ControlToValidate="tbKorisnichkoIme"></asp:RequiredFieldValidator>
+                    CssClass="error"  ErrorMessage="Внесете корисничко име!" 
+                    ControlToValidate="tbKorisnichkoIme" Display="Dynamic"></asp:RequiredFieldValidator>
                 <br>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                    ControlToValidate="tbKorisnichkoIme" Display="Dynamic" 
+                     CssClass="error" ControlToValidate="tbKorisnichkoIme" Display="Dynamic" 
                     ErrorMessage="За корисничко име можете да внесете само : a-z,  A-Z , @,  * ,  -  ,  _" 
                     ValidationExpression="^[a-zA-Z0-9_\-@\*]*$"></asp:RegularExpressionValidator>
+                <br></br>
                 </br>
             </asp:Panel>
         </td>
@@ -128,7 +56,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                ControlToValidate="tbIme" ErrorMessage="Внесете име!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbIme" ErrorMessage="Внесете име!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -141,7 +69,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                ControlToValidate="tbPrezime" ErrorMessage="Внесете презиме!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbPrezime" ErrorMessage="Внесете презиме!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -157,7 +85,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                ControlToValidate="rbPol" ErrorMessage="Одберете пол!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="rbPol" ErrorMessage="Одберете пол!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -170,7 +98,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                ControlToValidate="tbAdresa" ErrorMessage="Внесете адреса!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbAdresa" ErrorMessage="Внесете адреса!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -183,7 +111,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                ControlToValidate="tbGrad" ErrorMessage="Внесете град"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbGrad" ErrorMessage="Внесете град"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -196,7 +124,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                ControlToValidate="tbDrzava" ErrorMessage="Внесете држава!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbDrzava" ErrorMessage="Внесете држава!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -209,7 +137,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                ControlToValidate="tbMobTel" ErrorMessage="Внесете телефон!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbMobTel" ErrorMessage="Внесете телефон!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -222,7 +150,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
-                ControlToValidate="tbEmail" ErrorMessage="Внесете e-mail адреса!"></asp:RequiredFieldValidator>
+                 CssClass="error" ControlToValidate="tbEmail" ErrorMessage="Внесете e-mail адреса!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -235,10 +163,10 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
-                ControlToValidate="tbPassword" ErrorMessage="Внесете лозинка!"></asp:RequiredFieldValidator>
+                CssClass="error"  ControlToValidate="tbPassword" ErrorMessage="Внесете лозинка!"></asp:RequiredFieldValidator>
             <br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                ControlToValidate="tbPassword" Display="Dynamic" 
+                CssClass="error"  ControlToValidate="tbPassword" Display="Dynamic" 
                 ErrorMessage="За лозинка можете да внесете само : a-z,  A-Z , @,  * ,  -  ,  _" 
                 ValidationExpression=" ^[a-zA-Z0-9_\-@\*]*$ "></asp:RegularExpressionValidator>
         </td>
@@ -253,7 +181,7 @@
         </td>
         <td class="style22">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
-                ControlToValidate="tbPasswordCheck" ErrorMessage="Потврдете ја лозинката!"></asp:RequiredFieldValidator>
+                CssClass="error"  ControlToValidate="tbPasswordCheck" ErrorMessage="Потврдете ја лозинката!"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -275,10 +203,6 @@
             </td>
     </tr>
 </table>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="LoginSpace" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="MainContentSpace" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="AdvertisingSpace" runat="server">
 </asp:Content>
