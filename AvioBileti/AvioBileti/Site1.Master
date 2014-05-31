@@ -40,9 +40,10 @@
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Public/Home.aspx" Text="Почетна" />
                     <asp:MenuItem NavigateUrl="~/Public/SearchFlights.aspx" Text="Пребарај летови" />
-                    <asp:MenuItem NavigateUrl="~/Public/Information.aspx" Text="Информации" />
+                    <asp:MenuItem NavigateUrl="~/Public/WeatherForecast.aspx" Text="Временска прогноза" />
                     <asp:MenuItem NavigateUrl="~/User/MyProfile.aspx" Text="Профил" />
                     <asp:MenuItem NavigateUrl="~/User/MyReservations.aspx" Text="Резервации" />
+                    <asp:MenuItem NavigateUrl="~/Public/Contact.aspx" Text="Контакт" />
                 </Items>
             </asp:Menu>
         </div>
@@ -50,7 +51,7 @@
             <asp:ContentPlaceHolder ID="FlightSearchSpace" runat="server">
                 
             </asp:ContentPlaceHolder>
-            <asp:ContentPlaceHolder ID="MainContentSpace" runat="server" />            
+            <asp:ContentPlaceHolder ID="MainContentSpace" runat="server"/>            
         </div>
         <div class="clear">
         </div>
