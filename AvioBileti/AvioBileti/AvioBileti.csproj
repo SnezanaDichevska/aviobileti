@@ -57,9 +57,14 @@
     <Content Include="Images\images.jpg" />
     <Content Include="Images\Page-BgGlare.png" />
     <Content Include="Images\Page-BgSimpleGradient.jpg" />
+    <Content Include="Images\ProfilePictures\01.jpg" />
+    <Content Include="Images\Weather\Status-weather-clear-icon.png" />
+    <Content Include="Images\Weather\Status-weather-clouds-icon.png" />
+    <Content Include="Images\Weather\Status-weather-many-clouds-icon.png" />
+    <Content Include="Images\Weather\Status-weather-showers-icon.png" />
     <Content Include="Public\Contact.aspx" />
     <Content Include="Public\Home.aspx" />
-    <Content Include="Public\WeatherForecast.aspx" />
+    <Content Include="Public\Weather.aspx" />
     <Content Include="Public\Login.aspx" />
     <Content Include="Public\Registration.aspx" />
     <Content Include="Public\SearchFlights.aspx" />
@@ -116,12 +121,12 @@
     <Compile Include="Public\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Public\WeatherForecast.aspx.cs">
-      <DependentUpon>WeatherForecast.aspx</DependentUpon>
+    <Compile Include="Public\Weather.aspx.cs">
+      <DependentUpon>Weather.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Public\WeatherForecast.aspx.designer.cs">
-      <DependentUpon>WeatherForecast.aspx</DependentUpon>
+    <Compile Include="Public\Weather.aspx.designer.cs">
+      <DependentUpon>Weather.aspx</DependentUpon>
     </Compile>
     <Compile Include="Public\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -197,6 +202,7 @@
       <CachedSettingsPropName>AvioBileti_globalWeather_GlobalWeather</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

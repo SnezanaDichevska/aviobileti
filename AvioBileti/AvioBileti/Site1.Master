@@ -9,6 +9,24 @@
     <link href="Styles/bootstrap.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+        function initialize() {
+            var map_canvas = document.getElementById('map_canvas');
+            var map_options = {
+                center: new google.maps.LatLng(41.99051, 21.44566),
+                zoom: 17,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(map_canvas, map_options);
+            // Creating a marker and positioning it on the map
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(41.99051, 21.44566),
+                map: map
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body>
     <form runat="server">
@@ -40,16 +58,15 @@
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Public/Home.aspx" Text="Почетна" />
                     <asp:MenuItem NavigateUrl="~/Public/SearchFlights.aspx" Text="Пребарај летови" />
-                    <asp:MenuItem NavigateUrl="~/Public/WeatherForecast.aspx" Text="Временска прогноза" />
                     <asp:MenuItem NavigateUrl="~/User/MyProfile.aspx" Text="Профил" />
                     <asp:MenuItem NavigateUrl="~/User/MyReservations.aspx" Text="Резервации" />
+                    <asp:MenuItem NavigateUrl="~/Public/Weather.aspx" Text="Време" />
                     <asp:MenuItem NavigateUrl="~/Public/Contact.aspx" Text="Контакт" />
                 </Items>
             </asp:Menu>
         </div>
         <div class="main">
-            <asp:ContentPlaceHolder ID="FlightSearchSpace" runat="server">
-                
+            <asp:ContentPlaceHolder ID="FlightSearchSpace" runat="server">                
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="MainContentSpace" runat="server"/>            
         </div>

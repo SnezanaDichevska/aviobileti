@@ -41,7 +41,6 @@ h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
     color: #666666;
-    font-variant: small-caps;
     text-transform: none;
     font-weight: 200;
     margin-bottom: 0px;
@@ -74,6 +73,7 @@ h5, h6
 {
     font-size: 1em;
 }
+
 
 /* this rule styles <h1> and <h2> tags that are the 
 first child of the left and right table columns */
@@ -338,4 +338,49 @@ div.accountInfo
     width=100%;
     margin=50px;
     padding=50px;
+}
+
+.ddl
+ {
+   width: 350px;
+   height: 40px;
+   border-radius: 5px;
+ }
+ 
+ .col-xs-offset-x {
+  margin-left: 12%;
+}
+
+
+ #map_canvas {
+  width: 360px;
+  height: 240px;           
+            
+}
+        
+.set-info
+{
+  width: 360px;
+  height: 240px;   
+  margin-top: 30px;
+  margin-left: 30px;
+ 
+}
+
+.set-map
+{
+  margin-top: 30px;
+  margin-right: 30px;
+  float: right; 
+}
+
+.profile-img {
+   padding:1px;
+   border:1px solid #021a40;
+   background-color:#ff0;
+}
+
+.set-margin 
+{
+    margin:30px;
 }
