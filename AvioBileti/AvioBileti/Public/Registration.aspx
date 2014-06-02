@@ -36,13 +36,13 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     CssClass="error"  ErrorMessage="Внесете корисничко име!" 
                     ControlToValidate="tbKorisnichkoIme" Display="Dynamic"></asp:RequiredFieldValidator>
-                <br>
+                <br/>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                      CssClass="error" ControlToValidate="tbKorisnichkoIme" Display="Dynamic" 
                     ErrorMessage="За корисничко име можете да внесете само : a-z,  A-Z , @,  * ,  -  ,  _" 
                     ValidationExpression="^[a-zA-Z0-9_\-@\*]*$"></asp:RegularExpressionValidator>
                 <br></br>
-                </br>
+               
             </asp:Panel>
         </td>
     </tr>

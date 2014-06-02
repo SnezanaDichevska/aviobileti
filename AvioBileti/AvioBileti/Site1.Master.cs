@@ -16,28 +16,24 @@ namespace AvioBileti
 
             if (String.IsNullOrEmpty(Session["user"] as string))
             {
-                //btnSignOut.Visible = false;
-                //btnSignOut.Enabled = false;
-                //hlUser.Enabled = false;
-                //hlUser.Visible = false;
+               lbOdjaviSe.Visible = false;
+               lbOdjaviSe.Enabled = false;
+               lbNajaviSe.Text = "Најави се";
+               lbNajaviSe.PostBackUrl = "~/Public/Login.aspx";
             }
             else
             {
                 string user = Session["user"] as string;
-                //btnSignOut.Visible = true;
-                //btnSignOut.Enabled = true;
-                //hlUser.Enabled = true;
-                //hlUser.Visible = true;
-                //hlUser.Text = user;
+                lbOdjaviSe.Visible = true;
+                lbOdjaviSe.Enabled = true;
+                lbNajaviSe.Text = user;
+                lbNajaviSe.PostBackUrl = "~/User/MyProfile.aspx";
             }
         }
 
-        protected void btnSignOut_Click(object sender, EventArgs e)
+
+        protected void lbOdjaviSe_Click(object sender, EventArgs e)
         {
-         //   HeadLoginStatus.Visible = false;
-         //   btnSignOut.Enabled = false;
-         //   hlUser.Enabled = false;
-         //   hlUser.Visible = false;
             Session["user"] = null;
             Response.Redirect("~/Public/SearchFlights.aspx", true);
         }

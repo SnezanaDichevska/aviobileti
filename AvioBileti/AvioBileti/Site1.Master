@@ -9,8 +9,8 @@
     <link href="Styles/bootstrap.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script>
+    <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" >
         function initialize() {
             var map_canvas = document.getElementById('map_canvas');
             var map_options = {
@@ -38,18 +38,10 @@
                 </h1>
             </div>
             <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        <a href="~/Public/Login.aspx" id="HeadLoginStatus" runat="server">[Најави се]</a>
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Добредојде <span class="bold">
-                            <asp:LoginName ID="HeadLoginName" runat="server" />
-                        </span>
-                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="[Одјави се]"
-                            LogoutPageUrl="~/" />
-                    </LoggedInTemplate>
-                </asp:LoginView>
+                <asp:LinkButton ID="lbNajaviSe" runat="server" 
+                    PostBackUrl="~/Public/Login.aspx">Најави се</asp:LinkButton>
+                <asp:LinkButton ID="lbOdjaviSe" runat="server" Enabled="False" 
+                    onclick="lbOdjaviSe_Click" Visible="False">Одјави се</asp:LinkButton>
             </div>
         </div>
         <div class="clear hideSkiplink">

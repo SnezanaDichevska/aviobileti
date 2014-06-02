@@ -22,13 +22,22 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// HeadLoginView control.
+        /// lbNajaviSe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        protected global::System.Web.UI.WebControls.LinkButton lbNajaviSe;
+        
+        /// <summary>
+        /// lbOdjaviSe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbOdjaviSe;
         
         /// <summary>
         /// NavigationMenu control.

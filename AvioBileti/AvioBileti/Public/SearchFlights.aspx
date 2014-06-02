@@ -22,12 +22,15 @@
             </tr>
             <tr>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="cellSize">
+                    <asp:DropDownList ID="ddFromDestination" runat="server" CssClass="cellSize" 
+                        AutoPostBack="True" 
+                        onselectedindexchanged="ddFromDestination_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td class="width50" />
                 <td>
-                    <asp:DropDownList ID="DropDownList2" runat="server" CssClass="cellSize">
+                    <asp:DropDownList ID="ddToDestination" runat="server" CssClass="cellSize" 
+                        AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -59,9 +62,9 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Calendar ID="fromCalendar" runat="server" BackColor="White" BorderColor="#999999"
+                    <asp:Calendar ID="trgnuvanjeCalendar" runat="server" BackColor="White" BorderColor="#999999"
                         Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="16px" Width="200px"
-                        CellPadding="4" DayNameFormat="Shortest" Enabled="False" OnSelectionChanged="fromCalendar_SelectionChanged"
+                        CellPadding="4" DayNameFormat="Shortest" Enabled="False" OnSelectionChanged="trgnuvanjeCalendar_SelectionChanged"
                         Visible="False">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
@@ -76,9 +79,9 @@
                 </td>
                 <td class="width50" />
                 <td align="center" height="16px" width="200px">
-                    <asp:Calendar ID="toCalendar" runat="server" BackColor="White" BorderColor="#999999"
+                    <asp:Calendar ID="vrakjanjeCalendar" runat="server" BackColor="White" BorderColor="#999999"
                         Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="16px" Width="200px"
-                        CellPadding="4" DayNameFormat="Shortest" Enabled="False" OnSelectionChanged="toCalendar_SelectionChanged"
+                        CellPadding="4" DayNameFormat="Shortest" Enabled="False" OnSelectionChanged="vrakjanjeCalendar_SelectionChanged"
                         Visible="False">
                         <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                         <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />

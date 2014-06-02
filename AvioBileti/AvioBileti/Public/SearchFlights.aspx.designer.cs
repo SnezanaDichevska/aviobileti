@@ -22,22 +22,22 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.Label lblAccessMessage;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ddFromDestination control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddFromDestination;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// ddToDestination control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList ddToDestination;
         
         /// <summary>
         /// btnSearchFlights control.
@@ -85,22 +85,22 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.ImageButton btnCal2;
         
         /// <summary>
-        /// fromCalendar control.
+        /// trgnuvanjeCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar fromCalendar;
+        protected global::System.Web.UI.WebControls.Calendar trgnuvanjeCalendar;
         
         /// <summary>
-        /// toCalendar control.
+        /// vrakjanjeCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar toCalendar;
+        protected global::System.Web.UI.WebControls.Calendar vrakjanjeCalendar;
         
         /// <summary>
         /// gvFlights control.
