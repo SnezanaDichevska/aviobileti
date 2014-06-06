@@ -1402,6 +1402,8 @@ pre code {
 table {
   max-width: 100%;
   background-color: transparent;
+    text-align: center;
+    margin-left: 1px;
 }
 th {
   text-align: left;

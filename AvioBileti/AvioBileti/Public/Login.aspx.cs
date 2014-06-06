@@ -19,6 +19,7 @@ namespace AvioBileti.Public
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbUsername.Text;
+            
             /*Regex r = new Regex(@"^[a-zA-Z0-9_\-@\*]*$", RegexOptions.IgnoreCase);
             Match m = r.Match(username);  // proveri dali e validno korisnickoto ime 
 
@@ -75,5 +76,7 @@ namespace AvioBileti.Public
 
 
         }
+
+       
     }
 }

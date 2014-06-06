@@ -49,13 +49,13 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.Button btnSearchFlights;
         
         /// <summary>
-        /// tbFrom control.
+        /// tbTrgnuvanjeDatum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFrom;
+        protected global::System.Web.UI.WebControls.TextBox tbTrgnuvanjeDatum;
         
         /// <summary>
         /// btnCal1 control.
@@ -67,13 +67,13 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.ImageButton btnCal1;
         
         /// <summary>
-        /// tbTo control.
+        /// tbVrakjanjeDatum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTo;
+        protected global::System.Web.UI.WebControls.TextBox tbVrakjanjeDatum;
         
         /// <summary>
         /// btnCal2 control.
@@ -103,12 +103,30 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.Calendar vrakjanjeCalendar;
         
         /// <summary>
-        /// gvFlights control.
+        /// gvLetoviTrgnuvanje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvFlights;
+        protected global::System.Web.UI.WebControls.GridView gvLetoviTrgnuvanje;
+        
+        /// <summary>
+        /// gvLetoviVrakjanje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvLetoviVrakjanje;
+        
+        /// <summary>
+        /// btnRezerviraj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRezerviraj;
     }
 }

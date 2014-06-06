@@ -1,0 +1,9 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MakeAReservation.aspx.cs" Inherits="AvioBileti.User.MakeAReservation" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FlightSearchSpace" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContentSpace" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="AdvertisingSpace" runat="server">
+</asp:Content>

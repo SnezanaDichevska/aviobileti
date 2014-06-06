@@ -5,14 +5,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FlightSearchSpace" runat="server">
     <div class="set-margin">
-        <table align="center">
+        <table>
             <tr>
                 <td>
                     <asp:Label ID="lblAccessMessage" runat="server" CssClass="error"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td align="center">
                     Почетна дестинација:
                 </td>
                 <td class="width50" />
@@ -44,18 +44,21 @@
                 </td>
                 <td class="width50" />
                 <td rowspan="2">
-                    <asp:Button ID="btnSearchFlights" runat="server" Text="Пребарај" CssClass="btn btn-info" />
+                    <asp:Button ID="btnSearchFlights" runat="server" Text="Пребарај" 
+                        CssClass="btn btn-info" onclick="btnSearchFlights_Click" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:TextBox ID="tbFrom" runat="server" CssClass="cellSize"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:TextBox ID="tbTrgnuvanjeDatum" runat="server" CssClass="cellSize"></asp:TextBox>
                     <asp:ImageButton ID="btnCal1" runat="server" Height="17px" ImageUrl="~/Images/calendarimage.jpg"
                         OnClick="btnCal1_Click" />
                 </td>
                 <td class="width50" />
                 <td>
-                    <asp:TextBox ID="tbTo" runat="server" CssClass="cellSize"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:TextBox ID="tbVrakjanjeDatum" runat="server" CssClass="cellSize"></asp:TextBox>
                     <asp:ImageButton ID="btnCal2" runat="server" Height="17px" ImageUrl="~/Images/calendarimage.jpg"
                         OnClick="btnCal2_Click" />
                 </td>
@@ -100,20 +103,63 @@
     <br />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContentSpace" runat="server">
-    <p>
-        <asp:GridView ID="gvFlights" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-            <AlternatingRowStyle BackColor="White" />
-            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-            <SortedAscendingCellStyle BackColor="#FDF5AC" />
-            <SortedAscendingHeaderStyle BackColor="#4D0000" />
-            <SortedDescendingCellStyle BackColor="#FCF6C0" />
-            <SortedDescendingHeaderStyle BackColor="#820000" />
-        </asp:GridView>
-    </p>
+    <asp:GridView ID="gvLetoviTrgnuvanje" runat="server" CellPadding="4" ForeColor="#333333" 
+            GridLines="None" AutoGenerateColumns="False" CellSpacing="3" 
+        onselectedindexchanged="gvLetoviTrgnuvanje_SelectedIndexChanged" 
+        DataKeyNames="IDL">
+    <AlternatingRowStyle BackColor="White" />
+    <Columns>
+        <asp:BoundField DataField="IDL" Visible="False" />
+        <asp:BoundField DataField="PGRAD" HeaderText="Појдовна дестинација" />
+        <asp:BoundField DataField="KGRAD" HeaderText="Крајна дестинација" />
+        <asp:BoundField DataField="datumLet" DataFormatString="{0:d}" 
+                    HeaderText="Датум" />
+        <asp:BoundField DataField="cena" HeaderText="Цена" />
+        <asp:BoundField DataField="vremep" HeaderText="Полетување" />
+        <asp:BoundField DataField="vremes" HeaderText="Слетување" />
+        <asp:HyperLinkField NavigateUrl="~/User/MakeAReservation.aspx" />
+        <asp:CommandField SelectText="Резервирај" ShowSelectButton="True" />
+    </Columns>
+    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+    <SortedDescendingHeaderStyle BackColor="#820000" />
+</asp:GridView>
+<asp:GridView ID="gvLetoviVrakjanje" runat="server" CellPadding="4" ForeColor="#333333" 
+            GridLines="None" AutoGenerateColumns="False" CellSpacing="3" 
+        onselectedindexchanged="gvLetoviVrakjanje_SelectedIndexChanged" 
+        DataKeyNames="IDL">
+    <AlternatingRowStyle BackColor="White" />
+    <Columns>
+        <asp:BoundField DataField="IDL" Visible="False" />
+        <asp:BoundField DataField="PGRAD" HeaderText="Појдовна дестинација" />
+        <asp:BoundField DataField="KGRAD" HeaderText="Крајна дестинација" />
+        <asp:BoundField DataField="datumLet" DataFormatString="{0:d}" 
+                    HeaderText="Датум" />
+        <asp:BoundField DataField="cena" HeaderText="Цена" />
+        <asp:BoundField DataField="vremep" HeaderText="Полетување" />
+        <asp:BoundField DataField="vremes" HeaderText="Слетување" />
+        <asp:CommandField SelectText="Резервирај" ShowSelectButton="True" />
+    </Columns>
+    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+    <SortedDescendingHeaderStyle BackColor="#820000" />
+</asp:GridView>
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnRezerviraj" runat="server" onclick="btnRezerviraj_Click" 
+        Text="Резервирај" />
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="AdvertisingSpace" runat="server">
 </asp:Content>
