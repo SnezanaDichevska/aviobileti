@@ -54,12 +54,15 @@ namespace AvioBileti.Public
                         {
                             Session["user"] = username;
                             Session["userType"] = "admin";
+                            Session["makeAreservation"] = true;
                             Response.Redirect("~/Admin/MyProfile.aspx", true);
                         }
                         else
                         {
                             Session["user"] = username;
                             Session["userType"] = "user";
+
+                            Session["makeAreservation"] = true;
                             Response.Redirect("~/User/MyProfile.aspx", true);
                         }
                     }
@@ -74,7 +77,7 @@ namespace AvioBileti.Public
                 konekcija.Close();
             }
 
-
+            
         }
 
        

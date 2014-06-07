@@ -24,6 +24,12 @@ namespace AvioBileti.User
                 {
                     Response.Redirect("~/Admin/MyProfile.aspx", true);
                 }
+                else if(Convert.ToBoolean(Session["makeAreservation"]))
+                {
+                     //Ne bil logiran a rezerviral let po logiranje da go prenasoci direktno na make a reservation
+                        Session["makeAreservation"] = false;
+                        Response.Redirect("~/User/MakeAreservation.aspx", true);
+                }
             }
         }
     }

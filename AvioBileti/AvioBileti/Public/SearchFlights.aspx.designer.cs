@@ -85,6 +85,33 @@ namespace AvioBileti {
         protected global::System.Web.UI.WebControls.ImageButton btnCal2;
         
         /// <summary>
+        /// ddlBrojVozrasni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBrojVozrasni;
+        
+        /// <summary>
+        /// ddlBrojDeca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBrojDeca;
+        
+        /// <summary>
+        /// ddlBrojBebe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBrojBebe;
+        
+        /// <summary>
         /// trgnuvanjeCalendar control.
         /// </summary>
         /// <remarks>

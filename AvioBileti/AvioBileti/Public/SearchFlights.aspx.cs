@@ -282,7 +282,7 @@ namespace AvioBileti
             int krajnaId = Convert.ToInt32(ddToDestination.SelectedValue);
             String datumTrgnuvanje = tbTrgnuvanjeDatum.Text;
             String datumVrakjanje = tbVrakjanjeDatum.Text;
-
+            int sumPassangers=Convert.ToInt32(ddlBrojVozrasni.SelectedValue)+Convert.ToInt32(ddlBrojDeca.SelectedValue)+Convert.ToInt32(ddlBrojBebe.SelectedValue);
 
             if (pocetnaId != 0 && krajnaId != 0 && datumTrgnuvanje != "")
             {
@@ -293,7 +293,8 @@ namespace AvioBileti
                 lblAccessMessage.Text = datumTrgnuvanje; //datumTrgnuvanje
 
 
-                string query = "SELECT destinacii.gradd + ',' + destinacii.aerodrom as KGRAD,l.IDL as IDL,let.gradd + ', ' +let.aerodrom as PGRAD,vremes,vremep,cena,let.datum as datumLet"
+
+                string query = "SELECT destinacii.gradd + ',' + destinacii.aerodrom as KGRAD,l.IDL as IDL,let.gradd + ', ' +let.aerodrom as PGRAD,vremes,vremep,CONVERT(VARCHAR(10),cena) +' '+ valuta as cena,let.datum as datumLet"
                              + " from letovi l join destinacii on l.krajnaDestID=destinacii.IDD"
                              + " join (select IDL,gradd,datum,aerodrom"
                              + "    from letovi"
@@ -301,7 +302,8 @@ namespace AvioBileti
                              + "    on destinacii.IDD= letovi.pojdovnaDestID"
                              + "     and pojdovnaDestID=" + pocetnaId
                              + "  and CONVERT(VARCHAR(10),datum,104) like '" + datumTrgnuvanje + "%') as let" //and datum='" + date + "'
-                             + " on l.IDL=let.IDL  and destinacii.IDD=" + krajnaId + " ;";
+                             + " on l.IDL=let.IDL  and destinacii.IDD=" + krajnaId
+                             + " join dostapnostNaLetovi on letID=l.IDL and slobodniMesta > "+sumPassangers+" ;";
 
                 SqlCommand komanda = new SqlCommand(query, konekcija);
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -343,6 +345,7 @@ namespace AvioBileti
             {
                 SqlConnection konekcija = new SqlConnection();
                 konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+                int sumPassangers = Convert.ToInt32(ddlBrojVozrasni.SelectedValue) + Convert.ToInt32(ddlBrojDeca.SelectedValue) + Convert.ToInt32(ddlBrojBebe.SelectedValue);
 
 
 
@@ -350,7 +353,7 @@ namespace AvioBileti
                 lblAccessMessage.Text = datumVrakjanje; //datumTrgnuvanje
 
 
-                string query = "SELECT destinacii.gradd + ',' + destinacii.aerodrom as KGRAD,l.IDL as IDL,let.gradd + ', ' +let.aerodrom as PGRAD,vremes,vremep,cena,let.datum as datumLet"
+                string query = "SELECT destinacii.gradd + ',' + destinacii.aerodrom as KGRAD,l.IDL as IDL,let.gradd + ', ' +let.aerodrom as PGRAD,vremes,vremep,CONVERT(VARCHAR(10),cena)+' '+  valuta as cena,let.datum as datumLet"
                              + " from letovi l join destinacii on l.krajnaDestID=destinacii.IDD"
                              + " join (select IDL,gradd,datum,aerodrom"
                              + "    from letovi"
@@ -358,7 +361,8 @@ namespace AvioBileti
                              + "    on destinacii.IDD= letovi.pojdovnaDestID"
                              + "     and pojdovnaDestID=" + pocetnaId
                              + "  and CONVERT(VARCHAR(10),datum,104) like '" + datumVrakjanje + "%') as let" //and datum='" + date + "'
-                             + " on l.IDL=let.IDL  and destinacii.IDD=" + krajnaId + " ;";
+                             + " on l.IDL=let.IDL  and destinacii.IDD=" + krajnaId
+                              + " join dostapnostNaLetovi on letID=l.IDL and slobodniMesta > " + sumPassangers + " ;";
 
                 SqlCommand komanda = new SqlCommand(query, konekcija);
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -389,9 +393,16 @@ namespace AvioBileti
 
         protected void btnRezerviraj_Click(object sender, EventArgs e)
         {
+            Session["trgnuvanjeLetID"] = (int)ViewState["trgnuvanjeLetID"];
+            Session["vrakjanjeLetID"] = (int)ViewState["vrakjanjeLetID"];
+            Session["brojVozrasni"] = Convert.ToInt32(ddlBrojVozrasni.SelectedValue);
+            Session["brojDeca"] = Convert.ToInt32(ddlBrojDeca.SelectedValue);
+            Session["brojBebinja"] = Convert.ToInt32(ddlBrojBebe.SelectedValue);
+
             if (String.IsNullOrEmpty(Session["user"] as string))
             {
-                Response.Redirect("~/Public/SearchFlights.aspx?access=no", true);
+                
+                Response.Redirect("~/Public/Login.aspx?", true);
             }
             else
             {
@@ -406,8 +417,8 @@ namespace AvioBileti
                 else
                 {
                     //Za vo MakeAReservation transfer
-                    Session["trgnuvanjeLetID"] = (int)ViewState["trgnuvanjeLetID"];
-                    Session["vrakjanjeLetID"] = (int)ViewState["vrakjanjeLetID"];
+               
+       
                     Response.Redirect("~/User/MakeAReservation.aspx", true);
                 }
 
