@@ -16,6 +16,9 @@ namespace AvioBileti.Public
 
         }
 
+        /// <summary>
+        /// Validate the input and insert new user data into database
+        /// </summary>
         protected void btnSaveRegistration_Click(object sender, EventArgs e)
         {
             //TODO:  validaciski kontroli
@@ -24,39 +27,45 @@ namespace AvioBileti.Public
                    pol = rbPol.SelectedValue, adresa = tbAdresa.Text,
                    grad = tbGrad.Text, drzava = tbDrzava.Text, mobilen = tbMobTel.Text,
                    email = tbEmail.Text, lozinka = tbPassword.Text, lozinkaCheck = tbPasswordCheck.Text;
+            if (korisnichkoI=="" || ime=="" || pol=="" || grad == "" || adresa == "" || drzava == "" || mobilen == "" || email == "" || lozinka == "" || lozinkaCheck == "")
+            {
+                lblError.Text = "Пополнете ги сите полиња!";
+            }
+            else
+            {
+                SqlConnection konekcija = new SqlConnection();
+                konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
+                string query = "INSERT INTO korisnici"
+                    + " (korisnichkoIme, ime, prezime, pol, adresa, grad, drzava, mobtelefon, email, lozinka, tipID) "
+                    + " VALUES ('" + korisnichkoI + "','" + ime + "','" + prezime + "','" + pol + "','" + adresa + "','" + grad + "','" + drzava + "','" + mobilen + "','" + email + "','" + lozinka + "',2);";
 
-            SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
-            string query = "INSERT INTO korisnici"
-                +" (korisnichkoIme, ime, prezime, pol, adresa, grad, drzava, mobtelefon, email, lozinka, tipID) "
-                +" VALUES ('"+korisnichkoI+"','"+ime+"','"+prezime+"','"+pol+"','"+adresa+"','"+grad+"','"+drzava+"','"+mobilen+"','"+email+"','"+lozinka+"',2);";
-            
-            SqlCommand komanda = new SqlCommand(query, konekcija);
-            try
-            {
-                konekcija.Open();
-                int status = komanda.ExecuteNonQuery();
-                if (status == 0)
+                SqlCommand komanda = new SqlCommand(query, konekcija);
+                try
                 {
-                    lblError.Text = "  Неуспешна регистрација!";
+                    konekcija.Open();
+                    int status = komanda.ExecuteNonQuery();
+                    if (status == 0)
+                    {
+                        lblError.Text = "  Неуспешна регистрација!";
+                    }
+                    else
+                    {
+                        Session["user"] = korisnichkoI;
+                        Session["userType"] = "user";
+                        lblError.Text = " Успешно се регистриравте!";
+                        //TODO: da se iscistat kontrolite po uspesna registracija 
+                        //     ili da se skrie tabelata(malce potesko poso e html samo)
+
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Session["user"] = korisnichkoI;
-                    Session["userType"] = "user";
-                    lblError.Text = " Успешно се регистриравте!";
-                    //TODO: da se iscistat kontrolite po uspesna registracija 
-                    //     ili da se skrie tabelata(malce potesko poso e html samo)
-                    
+                    lblError.Text = ex.Message;
                 }
-            }
-            catch (Exception ex)
-            {
-                lblError.Text = ex.Message;
-            }
-            finally
-            {
-                konekcija.Close();
+                finally
+                {
+                    konekcija.Close();
+                }
             }
                 
         }

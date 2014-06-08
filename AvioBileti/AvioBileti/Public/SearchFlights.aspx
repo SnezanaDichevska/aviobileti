@@ -4,14 +4,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style1
-        {
+        {            margin-left: 120px;
         }
         .style3
         {
         }
         .style4
         {
-            width: 535px;
+            width: 321px;
+        }
+        .style5
+        {
+            width: 200px;
+        }
+        .style6
+        {
+            width: 267px;
+        }
+        .style8
+        {
+            width: 79px;
+        }
+        .style9
+        {
+            width: 253px;
+        }
+        .style10
+        {
+            width: 292px;
         }
     </style>
 </asp:Content>
@@ -19,62 +39,63 @@
     <div class="set-margin">
         <table>
             <tr>
-                <td class="style3">
-                    <asp:Label ID="lblAccessMessage" runat="server" CssClass="error"></asp:Label>
+                <td class="style3" width="200px">
+                    <asp:Label ID="lblError" runat="server" CssClass="error"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td align="center" class="style3" colspan="2">
+                <td align="center" class="style3" colspan="2" width="200px">
                     Почетна дестинација:
                 </td>
-                <td class="style4" colspan="3">
+                <td class="style6" colspan="3">
                     Крајна дестинација:
                 </td>
             </tr>
             <tr>
-                <td class="style1" colspan="2">
+                <td class="style1" colspan="2" align="center" width="200px">
                     <asp:DropDownList ID="ddFromDestination" runat="server" CssClass="cellSize" 
                         AutoPostBack="True" 
                         onselectedindexchanged="ddFromDestination_SelectedIndexChanged" 
                         Height="28px" Width="202px">
                     </asp:DropDownList>
                 </td>
-                <td class="style4" colspan="3">
+                <td class="style6" colspan="3">
                     <asp:DropDownList ID="ddToDestination" runat="server" CssClass="cellSize" 
-                        AutoPostBack="True" Height="28px" Width="202px">
+                        AutoPostBack="True" Height="28px" Width="202px" 
+                        onselectedindexchanged="ddToDestination_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td class="style3">
+                <td class="style3" width="200px">
                     Датум на тргнување:
                 </td>
-                <td class="style3" />
+                <td class="style5" width="200px" />
                     Датум на враќање:
-                <td class="style4">
+                <td class="style9">
                     Возрасен:</td>
                 <td class="style4">
                     Дете:</td>
-                <td class="style4">
+                <td class="style10">
                     Бебе:</td>
-                <td class="width50" />
+                <td class="style8" />
                 <td rowspan="2">
                     <asp:Button ID="btnSearchFlights" runat="server" Text="Пребарај" 
                         CssClass="btn btn-info" onclick="btnSearchFlights_Click" />
                 </td>
             </tr>
             <tr>
-                <td class="style3">
+                <td class="style3" width="200px">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="tbTrgnuvanjeDatum" runat="server" CssClass="cellSize"></asp:TextBox>
                     <asp:ImageButton ID="btnCal1" runat="server" Height="17px" ImageUrl="~/Images/calendarimage.jpg"
                         OnClick="btnCal1_Click" />
                 </td>
-                <td class="style3" />
+                <td class="style5" width="200px" />
                     <asp:TextBox ID="tbVrakjanjeDatum" runat="server" CssClass="cellSize"></asp:TextBox>
                     <asp:ImageButton ID="btnCal2" runat="server" Height="17px" ImageUrl="~/Images/calendarimage.jpg"
                         OnClick="btnCal2_Click" />
-                <td class="style4">
+                <td class="style9">
                     <asp:DropDownList ID="ddlBrojVozrasni" runat="server">
                         <asp:ListItem Selected="True">1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
@@ -95,7 +116,7 @@
                         <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td class="style4">
+                <td class="style10">
                     <asp:DropDownList ID="ddlBrojBebe" runat="server">
                         <asp:ListItem Selected="True">0</asp:ListItem>
                         <asp:ListItem>1</asp:ListItem>
@@ -108,7 +129,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="style3">
+                <td class="style3" width="200px">
                     <asp:Calendar ID="trgnuvanjeCalendar" runat="server" BackColor="White" BorderColor="#999999"
                         Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="16px" Width="200px"
                         CellPadding="4" DayNameFormat="Shortest" Enabled="False" OnSelectionChanged="trgnuvanjeCalendar_SelectionChanged"
@@ -124,7 +145,7 @@
                         <WeekendDayStyle BackColor="#FFFFCC" />
                     </asp:Calendar>
                 </td>
-                <td class="style3" />
+                <td class="style5" width="200px" />
                     <asp:Calendar ID="vrakjanjeCalendar" runat="server" BackColor="White" BorderColor="#999999"
                         Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="16px" Width="200px"
                         CellPadding="4" DayNameFormat="Shortest" Enabled="False" OnSelectionChanged="vrakjanjeCalendar_SelectionChanged"
@@ -139,7 +160,7 @@
                         <TodayDayStyle BackColor="#CCCCCC" />
                         <WeekendDayStyle BackColor="#FFFFCC" />
                     </asp:Calendar>
-                <td align="center" height="16px" class="style4" colspan="3">
+                <td align="center" height="16px" class="style6" colspan="3">
                     &nbsp;</td>
             </tr>
         </table>
@@ -147,10 +168,10 @@
     <br />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainContentSpace" runat="server">
-    <asp:GridView ID="gvLetoviTrgnuvanje" runat="server" CellPadding="4" ForeColor="#333333" 
-            GridLines="None" AutoGenerateColumns="False" CellSpacing="3" 
+    <asp:GridView ID="gvLetoviTrgnuvanje" runat="server" CellPadding="5" ForeColor="#333333" 
+            GridLines="None" AutoGenerateColumns="False" CellSpacing="5" 
         onselectedindexchanged="gvLetoviTrgnuvanje_SelectedIndexChanged" 
-        DataKeyNames="IDL">
+        DataKeyNames="IDL" Width="724px">
     <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:BoundField DataField="IDL" Visible="False" />
@@ -174,10 +195,10 @@
     <SortedDescendingCellStyle BackColor="#FCF6C0" />
     <SortedDescendingHeaderStyle BackColor="#820000" />
 </asp:GridView>
-<asp:GridView ID="gvLetoviVrakjanje" runat="server" CellPadding="4" ForeColor="#333333" 
-            GridLines="None" AutoGenerateColumns="False" CellSpacing="3" 
+<asp:GridView ID="gvLetoviVrakjanje" runat="server" CellPadding="5" ForeColor="#333333" 
+            GridLines="None" AutoGenerateColumns="False" CellSpacing="5" 
         onselectedindexchanged="gvLetoviVrakjanje_SelectedIndexChanged" 
-        DataKeyNames="IDL">
+        DataKeyNames="IDL" Width="724px">
     <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:BoundField DataField="IDL" Visible="False" />

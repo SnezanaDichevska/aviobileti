@@ -45,6 +45,9 @@
             </div>
         </div>
         <div class="clear hideSkiplink">
+            <table class="nav-justified">
+                <tr>
+                    <td align="left">
             <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
                 IncludeStyleBlock="false" Orientation="Horizontal">
                 <Items>
@@ -56,6 +59,19 @@
                     <asp:MenuItem NavigateUrl="~/Public/Contact.aspx" Text="Контакт" />
                 </Items>
             </asp:Menu>
+                    </td>
+                    <td align="right">
+            <asp:Menu ID="NavigationMenu0" runat="server" CssClass="menu" EnableViewState="false"
+                IncludeStyleBlock="false" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Public/Registration.aspx" Text="Регистрирај се" 
+                        Value="Регистрирај се" />
+                </Items>
+            </asp:Menu>
+                    </td>
+                </tr>
+            </table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="FlightSearchSpace" runat="server">                

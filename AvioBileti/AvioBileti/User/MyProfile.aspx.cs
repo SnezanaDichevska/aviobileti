@@ -13,7 +13,7 @@ namespace AvioBileti.User
         {
             if (String.IsNullOrEmpty(Session["user"] as string))
             {
-                Response.Redirect("~/Public/SearchFlights.aspx?access=no", true);
+                Response.Redirect("~/Public/Login.aspx?access=no", true);
             }
             else
             {

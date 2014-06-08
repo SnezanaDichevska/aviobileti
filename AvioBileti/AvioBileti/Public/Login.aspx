@@ -4,6 +4,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentSpace" runat="server">
+    <asp:Label ID="lblAccessMessage" runat="server" Font-Bold="True" 
+        ForeColor="Red"></asp:Label>
+    <br />
+    <asp:Label ID="lblError" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+    <br />
     <asp:Label ID="lblUsername" runat="server" Text="Корисничко име:"></asp:Label>
     <br />
     <asp:TextBox ID="tbUsername" runat="server"></asp:TextBox>
@@ -16,7 +21,6 @@
     <br />
     <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Најава" />
     &nbsp;<br />
-    <asp:Label ID="lblError" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="AdvertisingSpace" runat="server">
 </asp:Content>

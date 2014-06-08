@@ -23,6 +23,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -81,6 +83,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\globalWeather\globalweather.disco" />
+    <Content Include="User\ShowReservationInAProcess.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -179,6 +182,13 @@
     </Compile>
     <Compile Include="User\MyReservations.aspx.designer.cs">
       <DependentUpon>MyReservations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ShowReservationInAProcess.aspx.cs">
+      <DependentUpon>ShowReservationInAProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ShowReservationInAProcess.aspx.designer.cs">
+      <DependentUpon>ShowReservationInAProcess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\globalWeather\Reference.cs">
       <AutoGen>True</AutoGen>
