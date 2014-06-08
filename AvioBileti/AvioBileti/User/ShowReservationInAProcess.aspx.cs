@@ -250,6 +250,61 @@ namespace AvioBileti.User
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString;
             int id = (int)Session["userID"];
+            int trgnuvanjeID=(int)Session["trgnuvanjeLetID"];
+            int vrakjanjeID=0;
+            if(Session["vrakjanjeLetID"]!=null)
+                 vrakjanjeID = (int)Session["vrakjanjeLetID"];
+
+            //Reduce available seats in database
+            string query1 = "UPDATE  dostapnostNaLetovi  SET slobodniMesta=slobodniMesta-"+vkupnoPatnici
+                            +"  WHERE  letID="+trgnuvanjeID+ ";";
+            SqlCommand command = new SqlCommand(query1, konekcija);
+
+            try
+            {
+                konekcija.Open();
+                command.ExecuteNonQuery();
+              
+            }
+            catch (Exception ex)
+            {
+                PlaceHolder1.Controls.Clear();
+                Label lblError = new Label();
+                lblError.Text = ex.Message;
+                PlaceHolder1.Controls.Add(lblError);
+            }
+            finally
+            {
+                konekcija.Close();
+            }
+            //Reduce the number of seats on the return flight
+            if (Session["vrakjanjeLetID"] != null)
+            {
+                string q = "UPDATE  dostapnostNaLetovi  SET slobodniMesta=slobodniMesta-" + vkupnoPatnici
+                                           + "  WHERE  letID=" + vrakjanjeID + ";";
+                SqlCommand command1 = new SqlCommand(q, konekcija);
+
+                try
+                {
+                    konekcija.Open();
+                    command1.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    PlaceHolder1.Controls.Clear();
+                    Label lblError = new Label();
+                    lblError.Text = ex.Message;
+                    PlaceHolder1.Controls.Add(lblError);
+                }
+                finally
+                {
+                    konekcija.Close();
+                }
+
+            }
+
+
 
             for (int i = 0; i < vkupnoPatnici; i++)
             {
