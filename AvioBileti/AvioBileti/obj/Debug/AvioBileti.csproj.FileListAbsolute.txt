@@ -2,3 +2,8 @@ D:\Fakultet\semestar 6\Internet tehnologii\Proekt_IT\aviobileti\AvioBileti\AvioB
 D:\Fakultet\semestar 6\Internet tehnologii\Proekt_IT\aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.pdb
 D:\Fakultet\semestar 6\Internet tehnologii\Proekt_IT\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.dll
 D:\Fakultet\semestar 6\Internet tehnologii\Proekt_IT\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.pdb
+C:\Users\Windows\Desktop\ITProekt_aviobileti\aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.dll
+C:\Users\Windows\Desktop\ITProekt_aviobileti\aviobileti\AvioBileti\AvioBileti\bin\AvioBileti.pdb
+C:\Users\Windows\Desktop\ITProekt_aviobileti\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.dll
+C:\Users\Windows\Desktop\ITProekt_aviobileti\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.pdb
+C:\Users\Windows\Desktop\ITProekt_aviobileti\aviobileti\AvioBileti\AvioBileti\obj\Debug\AvioBileti.csprojResolveAssemblyReference.cache

@@ -21,9 +21,9 @@
             <td class="style4">
         <asp:GridView ID="gwDestinacii" runat="server" CellPadding="4" ForeColor="#333333" 
             GridLines="None" AutoGenerateColumns="False" DataKeyNames="idd" 
-                    onrowcancelingedit="gwDestinacii_RowCancelingEdit" 
-                    onrowediting="gwDestinacii_RowEditing" onrowupdating="gwDestinacii_RowUpdating" 
-                    onselectedindexchanged="gwDestinacii_SelectedIndexChanged">
+                    onrowcancelingedit="gwDestinacii_RowCancelingEdit1" 
+                    onrowediting="gwDestinacii_RowEditing" 
+                    onrowupdating="gwDestinacii_RowUpdating">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:ButtonField CommandName="select" DataTextField="idd" HeaderText="ID" />
@@ -95,8 +95,7 @@
             <td class="style4">
                 <asp:GridView ID="gwLetovi" runat="server" AutoGenerateColumns="False" 
                     DataKeyNames="idl" onrowcancelingedit="gwLetovi_RowCancelingEdit" 
-                    onrowediting="gwLetovi_RowEditing" onrowupdating="gwLetovi_RowUpdating" 
-                    onselectedindexchanged="gwLetovi_SelectedIndexChanged">
+                    onrowediting="gwLetovi_RowEditing" onrowupdating="gwLetovi_RowUpdating">
                     <Columns>
                         <asp:ButtonField CommandName="select" DataTextField="idl" HeaderText="IDL" 
                             Text="Button" />

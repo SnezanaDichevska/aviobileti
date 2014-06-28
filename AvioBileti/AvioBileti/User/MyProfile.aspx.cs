@@ -22,7 +22,7 @@ namespace AvioBileti.User
                 string userType = Session["userType"] as string;
                 if (userType == "admin")
                 {
-                    Response.Redirect("~/Admin/MyProfile.aspx", true);
+                    Response.Redirect("~/Admin/AdminHome.aspx", true);
                 }
                 else if(Convert.ToBoolean(Session["makeAreservation"]))
                 {

@@ -16,8 +16,25 @@ namespace AvioBileti.Admin
         {
             if (!Page.IsPostBack)
             {
-                ispolniDestinacii();
-                ispolniLetovi();
+                if (String.IsNullOrEmpty(Session["user"] as string))
+                {
+                    Response.Redirect("~/Public/Login.aspx?access=no", true);
+                }
+                else
+                {
+                    string userType = Session["userType"] as string;
+                    if (userType == "user")
+                    {
+                        Response.Redirect("~/User/MyProfile.aspx", true);
+                    }
+                    else
+                    {
+                        ispolniDestinacii();
+                        ispolniLetovi();
+                    }
+                }
+
+                
             }
 
         }
@@ -50,18 +67,6 @@ namespace AvioBileti.Admin
             }
         }
 
-        protected void gwDestinacii_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void gwDestinacii_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            DataSet ds = (DataSet)ViewState["dataset"];
-            gwDestinacii.EditIndex = -1;
-            gwDestinacii.DataSource = ds;
-            gwDestinacii.DataBind();
-        }
 
         protected void gwDestinacii_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -280,9 +285,16 @@ namespace AvioBileti.Admin
                 ispolniLetovi();
         }
 
-        protected void gwLetovi_SelectedIndexChanged(object sender, EventArgs e)
-        {
+       
 
+        protected void gwDestinacii_RowCancelingEdit1(object sender, GridViewCancelEditEventArgs e)
+        {
+            DataSet ds = (DataSet)ViewState["dataset"];
+            gwDestinacii.EditIndex = -1;
+            gwDestinacii.DataSource = ds;
+            gwDestinacii.DataBind();
         }
+
+       
     }
 }

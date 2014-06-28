@@ -68,7 +68,7 @@ namespace AvioBileti.Public
                             Session["user"] = username;
                             Session["userID"] = id;
                             Session["userType"] = "admin";
-                            Response.Redirect("~/Admin/MyProfile.aspx", true);
+                            Response.Redirect("~/Admin/AdminHome.aspx", true);
                         }
                         else
                         {
